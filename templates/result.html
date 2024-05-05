@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Prediction Result</title>
+</head>
+<body>
+    <h1>Prediction Form</h1>
+    <form action="{{ url_for('predict') }}" method="post">
+        <label for="input_1">noticed anti-tobacco messages anywhere in past 30 days :</label><br>
+        <input type="text" id="input_1" name="input_1"><br>
+        <label for="input_2">saw tobacco advertisements anywhere in past 30 days:</label><br>
+        <input type="text" id="input_2" name="input_2"><br>
+        <label for="input_3">thought other people tobacco smoking is harmful to them:</label><br>
+        <input type="text" id="input_3" name="input_3"><br>
+        <label for="input_4">favoured ban on smoking inside enclosed public places (%):</label><br>
+        <input type="text" id="input_4" name="input_4"><br>
+        <label for="input_5">favoured ban on smoking at outdoor public places:</label><br>
+        <input type="text" id="input_5" name="input_5"><br>
+        <label for="input_6">aware of the policy for displaying tobacco-free school board:</label><br>  <!-- New input field -->
+        <input type="text" id="input_6" name="input_6"><br>  <!-- New input field -->
+        <input type="submit" value="Predict">
+    </form>
+    {% if prediction %}
+    <h2>Prediction Result</h2>
+    <p>The predicted result is: {{ prediction }}</p>
+    {% endif %}
+</body>
+</html>
